@@ -6,12 +6,23 @@
         <meta name="description" content="Информация о том, что такое компьютерная графика">
         <meta name="keywords" content="компьютерная графика, изображение, вектор, растр, пиксель, моделирование, CGI, CG">
         <meta http-equiv="Content-Language" content="ru">
+        <link rel="stylesheet" href="./styles/2lab.css">
+        <style>
+            .logo{
+                width:6.5%;
+                height:6.5%
+            }
+            #film-list{
+                color:rgb(21, 0, 159)
+            }
+        </style>
     </head>
 
 
     <body>
+        <div class="cont">
         <div>
-            <img src="./images/logo.png" alt="Логотип сайта" width="100" height="100">
+            <img class="logo" src="./images/logo.png" alt="Логотип сайта">
             <h1>Компьютерная графика</h1>
             <hr>
             <ul>
@@ -36,7 +47,7 @@
                     контексте кино, компьютерная генерация изображений (CGI). Нехудожественные аспекты компьютерной 
                     графики являются предметом исследований в области компьютерных наук.
                 </p>
-                <img src="./images/teapot.jpg" alt="Чайник" width="600" >
+                <img src="./images/teapot.jpg" alt="Чайник" style="width:600px; height:auto; border-radius: 10%;" >
             </div>
             
             <div>
@@ -71,7 +82,7 @@
                     История компьютерной графики насчитывает несколько ключевых моментов, когда определенные 
                     CG-произведения действительно произвели революцию и повлияли на развитие этой области. 
                     Вот несколько примеров:
-                    <ul>
+                    <ul id = film-list style="color:rgb(211, 133, 9)">
                         <li>"Терминатор 2: Судный день" (1991) - Режиссер Джеймс Кэмерон использовал в фильме 
                             значительное количество компьютерной графики, включая реалистичные эффекты жидкого 
                             металла, созданные Industrial Light & Magic. Эти эффекты стали вехой в истории 
@@ -102,7 +113,7 @@
                     индустрии в целом.
                 </p>
                 <h3>Кадр из фильма Терминатор 2</h3>
-                <img src="./images/terminator-2.jpg" alt="Терминатор" width="600" >
+                <img src="./images/terminator-2.jpg" alt="Терминатор" style="width:600px; height:auto; border-radius: 10%;" >
                 
             </div>
         </div>
@@ -115,5 +126,6 @@
                 По вопросам писать: <a href="mailto:pr@guap.ru">pr@guap.ru</a><br>
             </address>
         </div>
+    </div>
     </body>
 </html>

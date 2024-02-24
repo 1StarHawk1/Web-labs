@@ -1,0 +1,66 @@
+body{
+    background-image: linear-gradient(white, rgb(152, 152, 152));
+    margin: 0; /* Убрать отступы по умолчанию */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Чтобы центрировать по вертикали на всю высоту окна */
+}
+.cont{
+    max-width: 800px; /* Ширина контейнера по вашему выбору */
+    padding: 20px;
+    background-color: white;
+}
+
+table{
+    border: 2px solid;
+    border-color: darkblue;
+    margin: 5px;
+    padding:10px
+}
+td, th {
+    border: 1px solid;
+    border-color: rgb(0,0,139);
+  }
+
+tbody img{
+    width:3.5mm;
+    height: auto;
+    filter: grayscale();
+}
+
+tr:hover{
+    background-color: #00FFFF ;
+}
+
+li>ul{
+    display: none;
+}
+
+li:hover > ul{
+    display: block;
+}
+
+address a:link{
+    color:chartreuse
+}
+
+a:visited{
+    color:darkgoldenrod
+}
+
+#film-list{
+    color:red;
+}
+
+h2+p{
+    background-color: rgba(159, 210, 255, 0.267);
+}
+
+ul li ul li::first-letter{
+    color: darkgoldenrod
+}
+
+h1{
+    text-decoration: underline;
+}
