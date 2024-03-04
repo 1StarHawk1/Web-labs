@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Средства html5</title>
+        <title>Компьютерная графика - применение, виды, будущее</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Расширенная информация о компьютерной графике: области применения и виды">
         <meta name="keywords" content="компьютерная графика, изображение, вектор, растр, пиксель, моделирование, CGI, CG">
         <meta http-equiv="Content-Language" content="ru">
         <link rel="stylesheet" href="./styles/2lab.css">
+
+        <script>
+            function createRow(){
+                var text = document.getElementsByTagName("input");
+                var table = document.getElementsByTagName("table");
+                var newRow = document.createElement("tr");
+                newRow.classList.add("addedRow");
+                /*for(let i = 0; i<9; i++){
+                    var emptyCell = document.createElement("td");
+                    newRow.appendChild(emptyCell);
+                }*/
+                var emptyCell = document.createElement("td");
+                if(text[0].value=="" || text[1].value==""){
+                    emptyCell.colSpan = 9;
+                    emptyCell.textContent = text[0].value + text[1].value;
+                    newRow.appendChild(emptyCell);
+                }
+                else{
+                    emptyCell.textContent = text[0].value;
+                    var anotherCell = document.createElement("td");
+                    anotherCell.textContent = text[1].value;
+                    anotherCell.colSpan = 8;
+                    newRow.appendChild(emptyCell);
+                    newRow.appendChild(anotherCell);
+                }
+                table[0].appendChild(newRow);
+                text[0].value="";
+                text[1].value = "";
+            }
+            function deleteAddedRows(){
+                var addedRows = document.querySelectorAll(".addedRow");
+                for (var i = 0; i < addedRows.length; i++) {
+                    addedRows[i].remove();
+                }
+            }
+
+            var clicked = 0;
+            function changeTextBackgroung(){
+                var paragraphs = document.getElementsByTagName("p");
+                var buttons = document.getElementsByTagName("button");
+                if(clicked == 0){
+                    for(let i = 0; i<paragraphs.length; i++){
+                        paragraphs[i].style.backgroundColor = "transparent";
+                        clicked +=1
+                        buttons[0].textContent = "Вернуть выделение текста на странице";
+                    }
+                }
+                else{
+                    for(let i = 0; i<paragraphs.length; i++){
+                        var prevElement = paragraphs[i].previousElementSibling;
+                        if (prevElement && prevElement.tagName.toLowerCase() === "h2") {
+                            paragraphs[i].style.backgroundColor = "rgba(159, 210, 255, 0.267)";
+                        }
+                        clicked -=1
+                        buttons[0].textContent = "Снять выделение текста на странице";
+                    }
+                }
+            }
+
+            var videoSize = 0;
+            function bigVideo(){
+                var video = document.getElementsByTagName("video");
+                var buttons = document.getElementsByTagName("button");
+                if(videoSize == 0){
+                    video[0].style.width = "100%"
+                    buttons[buttons.length-1].textContent = "Уменьшить плеер";
+                    videoSize++;
+                }
+                else{
+                    video[0].style.width = "600px"
+                    buttons[buttons.length-1].textContent = "Расширить плеер";
+                    videoSize--;
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -19,13 +94,14 @@
         <nav>
             <ul>
                 <li><a href = index.html>Главная страница</a></li>
-                <li><a href = secondPage.html>Страница html5</a></li>
+                <li><a href = secondPage.html>Больше информации о компьютерной графике</a></li>
                 <li><a href = source.html>Использованные источники</a></li>
             </ul>
         </nav>
         <hr>
         <main>
             <section>
+                <button onclick="changeTextBackgroung()">Снять выделение текста на странице</button>
                 <h2>Области применения CG</h2>
                 <p>
                     Помимо видеоигр, в большинстве которых CG — это всё, что видит игрок, компьютерную графику 
@@ -137,24 +213,25 @@
                     мобильных приложений: например, при создании иллюстраций, иконок и логотипов.
                 </p>
                 <img src="./images/blender.PNG" alt="Снимок экрана блендера" width="300">
-                <ul>
-                    <table>
+
+                    <table onclick="createRow()">
                         <caption>Виды компьютерной графики и редакторы для них</caption>
                         <thead>
                             <td></td>
                             <th colspan="8">Инструмент/редактор</th>
+                        
+                            <tr>
+                                <th>Вид графики</th>
+                                <td>Adobe Photoshop</td>
+                                <td>Adobe Illustrator</td>
+                                <td>Figma</td>
+                                <td>CorelDRAW</td>
+                                <td>Fractal Generator</td>
+                                <td>Frax</td>
+                                <td>Blender</td>
+                                <td>3dsMax</td>
+                            </tr>
                         </thead>
-                        <tr>
-                            <th>Вид графики</th>
-                            <td>Adobe Photoshop</td>
-                            <td>Adobe Illustrator</td>
-                            <td>Figma</td>
-                            <td>CorelDRAW</td>
-                            <td>Fractal Generator</td>
-                            <td>Frax</td>
-                            <td>Blender</td>
-                            <td>3dsMax</td>
-                        </tr>
                         <tbody>
                             <tr>
                                 <td>Растровая</td>
@@ -200,7 +277,12 @@
                             <td colspan="9">В таблице приведены далеко не все существующие редакторы</td>
                         </tfooter>
                     </table>
-                </ul>
+
+                <input>
+                <input>
+                <button  onclick="createRow()">Создать строку таблицы</button>
+                <button onclick="deleteAddedRows()">Удалить добавленные строки</button>
+
             </section>
             <section>
                 <h2>Что ждет CG в будущем</h2>
@@ -228,7 +310,8 @@
                 <video controls width="600">
                     <source src="video/Компьютерная графика в кино.mp4" type="video/mp4">
                     Ваш браузер не поддерживает видео элемент.
-                </video>
+                </video><br>
+                <button onclick="bigVideo()">Расширить плеер</button>
                 <p>Для удобство приведена аудио версия:
                     <audio controls>
                         <source src="video/Компьютерная графика в кино.mp4" type="audio/mp4">

@@ -7,7 +7,7 @@ body{
     min-height: 100vh; /* Чтобы центрировать по вертикали на всю высоту окна */
 }
 .cont{
-    max-width: 800px; /* Ширина контейнера по вашему выбору */
+    max-width: 800px;
     padding: 20px;
     background-color: white;
 }
@@ -64,3 +64,18 @@ ul li ul li::first-letter{
 h1{
     text-decoration: underline;
 }
+
+button{
+    background-color: rgb(48, 52, 38);
+    padding: 10px;
+    color:cyan;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(67, 67, 67);
+}
+input{
+    width:150px;
+}
+
+

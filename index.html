@@ -16,6 +16,44 @@
                 color:rgb(21, 0, 159)
             }
         </style>
+
+        <script>
+            const getInfo = () =>{
+                alert("Губин Антон\nГруппа 4136")
+            }
+            timeNow = function printTime(offset=0){
+                var hour, minute; var time ="";
+                var datecur;
+                datecur = new Date();
+                hour = Math.abs((datecur.getHours()+offset)%24);
+                minute= datecur.getMinutes();
+                sec = datecur.getSeconds();
+                time = ((hour < 10) ? "0" : "") + hour+":";
+                time += ((minute < 10) ? "0" : "") + minute+":";
+                time += ((sec < 10) ? "0" : "") + sec;
+                tmr = document.getElementsByTagName ("span");
+                tmr[0].innerText = time;
+            }
+
+
+            document.addEventListener("DOMContentLoaded", function() {
+                document.body.style.backgroundImage = "none";
+            });
+        
+            window.addEventListener('scroll', function() {
+                // Получаем текущее значение вертикального скролла
+                var scrollTop = document.documentElement.scrollTop;
+                // меняем цвет фона в зависимости от значения скролла
+                if (scrollTop > 1000) {
+                    document.body.style.backgroundColor = 'lightblue';
+                } else {
+                    document.body.style.backgroundColor = 'gray';
+                }
+            });
+            window.addEventListener('load', function() {
+                document.body.style.backgroundColor = 'gray';
+            });
+        </script>
     </head>
 
 
@@ -27,9 +65,18 @@
             <hr>
             <ul>
                 <li><a href = index.html>Главная страница</a></li>
-                <li><a href = secondPage.html>Страница html5</a></li>
+                <li><a href = secondPage.html>Больше информации о компьютерной графике</a></li>
                 <li><a href = source.html>Использованные источники</a></li>
             </ul>
+            <button onmousemove="getInfo()">Показать информацию об авторе страницы</button>
+            <hr>
+            <h2>Время: <span></span></h2>
+            <div>
+                <button onclick="timeNow()">Время московское</button>
+                <button onclick="timeNow(8)">Время в Южно-Сахалинске</button>
+                <button onclick="timeNow(-8)">Время в Торонто</button>
+            </div>
+            
         </div>
         <hr>
 
