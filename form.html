@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Форма</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./styles/2lab.css">
+        <style>
+            table{
+                border: none;
+                margin: 5px;
+            }
+            tr td{
+                border: none;
+            }
+            th{
+                border: none;
+                width: 200px
+            }
+            /* tr:hover{
+                background-color: initial;
+            }      */
+        </style>
+    </head>
+
+    <body>
+        <div class="cont" style="width:800px">
+            <header>
+                <img src="./images/logo.png" alt="Логотип сайта" width="100" height="100">
+                <h1>Источники</h1>
+            </header>
+            <hr>
+            <nav>
+                <ul>
+                    <li><a href = index.html>Главная страница</a></li>
+                    <li><a href = secondPage.html>Больше информации о компьютерной графике</a></li>
+                    <li><a href = "form.html">Форма посетителя сайта</a></li>
+                    <li><a href = source.html>Использованные источники</a></li>
+                </ul>
+            </nav>
+            <hr>
+            <main>
+                <h1>Анкета</h1>
+                <form method="POST" action="/cgi-bin/tutor5.py">
+                    <table>
+                        <tr>
+                            <th>Фамилия</th>
+                            <td><input type="text" name="secondname"></td>
+                        </tr>
+                        <tr>
+                            <th>Имя</th>
+                            <td><input type="text" name="firstname"></td>
+                        </tr>
+                        <tr>
+                            <th>Отчество</th>
+                            <td><input type="text" name="patronymic"></td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <th>Вид деятельности</th>
+                            <td><select name="job">
+                                <option>Школьник</option>
+                                <option>Студент</option>
+                                <option>Преподаватель</option>
+                                <option>Работяга с завода</option>
+                                <option>Другое</option>
+                            </select></td>
+                        </tr>
+                        
+                        <tr><th colspan="2" style="height: 35px;"></th></tr>
+
+                        <tr>
+                            <th rowspan="4">С каким типом графики вы знакомы?</th>
+                            <td><input type="checkbox" name = "CGtype" value="Растровая">Растровая</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name = "CGtype" value="Векторная">Векторная</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name = "CGtype" value="Фрактальная">Фрактальная</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name = "CGtype" value="Трехмерная">Трехмерная</td>
+                        </tr>
+                        
+                        <tr><th colspan="2" style="height: 35px;"></th></tr>
+
+                        <tr>
+                            <th rowspan="8">Какой ваш предпочтительный графический редактор</th>
+                            <td><input type="radio" name="redactor" value="Adobe Photoshop">Adobe Photoshop</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="Adobe Illustrator">Adobe Illustrator</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="CorelDRAW">CorelDRAW</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="GIMP">GIMP</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="Inkscape">Inkscape</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="Blender">Blender</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="AutodeskMaya">AutodeskMaya</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="redactor" value="3ds Max">3ds Max</td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" name="page_theme" value="Компьютерная графика"></td>
+                        </tr>
+                        <tr><td></td><td></td><td><input type="submit" value="Отправить"></td></tr>
+                    </table>
+                </form>
+            </main>
+            <hr>
+            <footer>
+                <p>Компьютерная графика 2024</p>
+                <address>
+                    По вопросам писать: <a href="mailto:pr@guap.ru">pr@guap.ru</a><br>
+                </address>
+            </footer>
+        </div>
+    </body>
+</html>

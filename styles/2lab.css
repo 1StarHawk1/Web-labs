@@ -7,7 +7,7 @@ body{
     min-height: 100vh; /* Чтобы центрировать по вертикали на всю высоту окна */
 }
 .cont{
-    max-width: 800px;
+    width: 800px;
     padding: 20px;
     background-color: white;
 }
