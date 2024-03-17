@@ -10,6 +10,14 @@ html1 = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Таблица с анкетой</title>
     <link rel="stylesheet" href="../styles/2lab.css"> <!-- Подключение CSS стиля -->
+    <style>
+        td{
+            width: 100px;
+        }
+        tr:hover{
+            background-color: initial;
+        }
+    </style>
 </head>
 <body>
     <div class="cont" style="width:800px">
@@ -42,16 +50,16 @@ for head in ll:
         ss = '<td>'+head+'</td>'
     print ( ss)
 print ('</tr> <tr>')
-data = ['firstname','secondname','patronymic','job', 'CGtype', 'redactor', 'page_theme']; i=0
-for field in ('firstname','secondname','patronymic','job', 'CGtype', 'redactor', 'page_theme'):
+data = ['secondname','firstname','patronymic','job', 'CGtype', 'redactor', 'page_theme']; i=0
+for field in ('secondname','firstname','patronymic','job', 'CGtype', 'redactor', 'page_theme'):
     if not field in form:
-        data[i] = '(unknown)'
+        data[i] = '(Не указано)'
     else:
         if not isinstance(form[field], list):
             data[i] = form[field].value
         else:
             values = [x.value for x in form[field]]
-            data[i] = ' and '.join(values)
+            data[i] = ' \n '.join(values)
     i+=1
 for el in data:
     if el == data[-1]:

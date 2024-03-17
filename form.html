@@ -16,10 +16,43 @@
                 border: none;
                 width: 200px
             }
-            /* tr:hover{
+             tr:hover{
                 background-color: initial;
-            }      */
+            }  
+            input[type="submit"]{
+                background-color: rgb(48, 52, 38);
+                padding: 10px;
+                color:cyan;
+                border-radius: 5px;
+            }
+
+            input[type="submit"]{
+                background-color: rgb(67, 67, 67);
+            }    
         </style>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const form = document.getElementById("myForm");
+                    form.addEventListener("submit", function(event) {
+
+                    form.addEventListener("submit", function(event){
+                        event.preventDefault();
+
+                        const firstnameValue = document.getElementById("firstname").value
+                        const secondnameValue = document.getElementById("secondname").value
+                        const patronymic = document.getElementById("patronymic").value
+                        
+                        const lettersOnly = /^[А-Яа-яA-Za-z]+$/;
+
+                        if(!lettersOnly.test(firstnameValue) || !lettersOnly.test(secondnameValue) || !lettersOnly.test(patronymic)){
+                            alert("Пожалуйста, используйте только буквы для ФИО!");
+                        }
+                    }); 
+                });
+            })
+        </script>
     </head>
 
     <body>
@@ -40,29 +73,29 @@
             <hr>
             <main>
                 <h1>Анкета</h1>
-                <form method="POST" action="/cgi-bin/tutor5.py">
+                <form id="myForm" method="POST" action="/cgi-bin/tutor5.py">
                     <table>
                         <tr>
                             <th>Фамилия</th>
-                            <td><input type="text" name="secondname"></td>
+                            <td><input type="text" id="secondname" name="secondname" required></td>
                         </tr>
                         <tr>
                             <th>Имя</th>
-                            <td><input type="text" name="firstname"></td>
+                            <td><input type="text" id="firstname" name="firstname" required></td>
                         </tr>
                         <tr>
                             <th>Отчество</th>
-                            <td><input type="text" name="patronymic"></td>
+                            <td><input type="text" id="patronymic" name="patronymic"></td>
                         </tr>
                         <tr></tr>
                         <tr>
                             <th>Вид деятельности</th>
                             <td><select name="job">
+                                <option>Другое</option>
                                 <option>Школьник</option>
                                 <option>Студент</option>
                                 <option>Преподаватель</option>
                                 <option>Работяга с завода</option>
-                                <option>Другое</option>
                             </select></td>
                         </tr>
                         
