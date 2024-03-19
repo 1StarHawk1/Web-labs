@@ -35,23 +35,20 @@
             document.addEventListener("DOMContentLoaded", function() {
 
                 const form = document.getElementById("myForm");
-                    form.addEventListener("submit", function(event) {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
 
-                    form.addEventListener("submit", function(event){
-                        event.preventDefault();
+                    const firstnameValue = document.getElementById("firstname").value
+                    const secondnameValue = document.getElementById("secondname").value
+                    const patronymic = document.getElementById("patronymic").value
+                                
+                    const lettersOnly = /^[А-Яа-яA-Za-z]+$/;
 
-                        const firstnameValue = document.getElementById("firstname").value
-                        const secondnameValue = document.getElementById("secondname").value
-                        const patronymic = document.getElementById("patronymic").value
-                        
-                        const lettersOnly = /^[А-Яа-яA-Za-z]+$/;
-
-                        if(!lettersOnly.test(firstnameValue) || !lettersOnly.test(secondnameValue) || !lettersOnly.test(patronymic)){
-                            alert("Пожалуйста, используйте только буквы для ФИО!");
-                        }
-                    }); 
-                });
-            })
+                    if(!lettersOnly.test(firstnameValue) || !lettersOnly.test(secondnameValue) || !lettersOnly.test(patronymic)){
+                        alert("Пожалуйста, используйте только буквы для ФИО!");
+                    }
+                }); 
+            });
         </script>
     </head>
 
