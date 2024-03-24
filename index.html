@@ -22,16 +22,17 @@
                 alert("Губин Антон\nГруппа 4136")
             }
             timeNow = function printTime(offset=0){
-                var hour, minute; var time ="";
-                var datecur;
+                let hour, minute;
+                let time ="";
+                let datecur;
                 datecur = new Date();
                 hour = Math.abs((datecur.getHours()+offset)%24);
                 minute= datecur.getMinutes();
-                sec = datecur.getSeconds();
+                let sec = datecur.getSeconds();
                 time = ((hour < 10) ? "0" : "") + hour+":";
                 time += ((minute < 10) ? "0" : "") + minute+":";
                 time += ((sec < 10) ? "0" : "") + sec;
-                tmr = document.getElementsByTagName ("span");
+                let tmr = document.getElementsByTagName ("span");
                 tmr[0].innerText = time;
             }
 
@@ -42,7 +43,7 @@
         
             window.addEventListener('scroll', function() {
                 // Получаем текущее значение вертикального скролла
-                var scrollTop = document.documentElement.scrollTop;
+                let scrollTop = document.documentElement.scrollTop;
                 // меняем цвет фона в зависимости от значения скролла
                 if (scrollTop > 1000) {
                     document.body.style.backgroundColor = 'lightblue';

@@ -36,9 +36,8 @@
         exit;
     }
     /* Посылаем запрос серверу */
-    if ($result = mysqli_query($link, 'SELECT Name, Last_version, Developer, Description FROM redactors')) {
-        print("Графические редакторы:\n");
-        echo "<br>";
+    if ($result = mysqli_query($link, 'SELECT ID, Name, Last_version, Developer, Description FROM redactors')) {
+        print("<h3>Графические редакторы:</h3>\n");
         echo "<table>
                 <tr>
                     <th>Название</th>
@@ -48,14 +47,31 @@
                 </tr>";
         /* Выборка результатов запроса */
         while( $row = mysqli_fetch_assoc($result) ){
-
-            //printf("%s (%s) - %s: %s\n", $row['Name'], $row['Last_version'], $row['Developer'], $row['Description']);
-            printf("<tr><td>".$row['Name']."</td><td>".$row['Last_version']."</td><td>".$row['Developer']."</td><td>".$row['Description']."</td></tr>");
+            printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $row['Name'], $row['Last_version'], $row['Developer'], $row['Description']);
         }
         echo "</table>";
     /* Освобождаем используемую память */
         mysqli_free_result($result);
     }
+
+    if ($result = mysqli_query($link, 'SELECT functionality.Name, functionality.Description, Type, redactors.name as redactors_name FROM functionality left join redactors
+                                        on functionality.redactor_id = redactors.id')) {
+            print("<h3>Функции редактора:</h3>\n");
+            echo "<table>
+                    <tr>
+                        <th>Функция</th>
+                        <th>Описание</th>
+                        <th>Тип</th>
+                        <th>Наименование редактора</th>
+                    </tr>";
+            /* Выборка результатов запроса */
+            while( $row = mysqli_fetch_assoc($result) ){
+                printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $row['Name'], $row['Description'], $row['Type'], $row['redactors_name']);
+            }
+            echo "</table>";
+        /* Освобождаем используемую память */
+            mysqli_free_result($result);
+        }
     /* Закрываем соединение */
     mysqli_close($link);
 
