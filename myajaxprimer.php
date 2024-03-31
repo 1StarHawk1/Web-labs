@@ -2,10 +2,14 @@
 header('Content-Type: text/html; charset=utf-8');
 setlocale(LC_ALL, 'ru_RU.65001', 'rus_RUS.65001', 'Russian_Russia. 65001', 'russian');
 
-$zRedactor = $_POST["redactor"];
-$zFunctionality = $_POST["functionality"];
-$zDescription = $_POST["description"];
-$zType = $_POST["type"];
+$json = file_get_contents('php://input');
+
+$data = json_decode($json);
+
+$zRedactor = $data->redactor;
+$zFunctionality = $data->functionality;
+$zDescription = $data->description;
+$zType = $data->type;
 
 /* Подключение к серверу MySQL */
 $link = mysqli_connect(

@@ -23,11 +23,16 @@
                 var sDescription = document.getElementsByName("description")[0].value;
                 var sType = document.getElementsByName("type")[0].value;
 
-                var params = 'redactor=' + sRedactor + '&functionality=' + sFunctionality + '&description=' + sDescription + '&type=' + sType;
+                var data = {
+                    redactor: sRedactor,
+                    functionality: sFunctionality,
+                    description: sDescription,
+                    type: sType
+                }
 
                 req.open("POST", "myajaxprimer.php", true);
-                req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                req.send(params); // посылаем запрос серверу
+                req.setRequestHeader("Content-type", "application/json");
+                req.send(JSON.stringify(data)); // посылаем запрос серверу
             }
             function receive() { // получение данных от сервера
                 if (req.readyState == 4){ // если запрос завершен
@@ -36,7 +41,9 @@
                     }
                     else {
                         alert('Ошибка '+ req.status+': \n' + req.statustext);
-                    }}}
+                    }
+                }
+            }
         </script>
         <style>
             .message {
@@ -86,7 +93,7 @@
             <hr>
 
             <main>
-                Демонстрация технологии AJAX. Запрос get <br><br>
+                Демонстрация технологии AJAX. Запрос post <br><br>
                 <table>
                     <tr>
                         <td>Редактор</td>
@@ -136,6 +143,7 @@
                 <br><br>
 
                 <?php
+                    echo "<div id=\"content\">";
                     /* Посылаем запрос серверу */
                     if ($result = mysqli_query($link, 'SELECT functionality.id as id_fun, functionality.Name, functionality.Description, Type, redactors.name as redactors_name FROM functionality left join redactors
                                                         on functionality.redactor_id = redactors.id ORDER BY functionality.id DESC')) {
@@ -154,6 +162,7 @@
 
                     /* Закрываем соединение */
                     mysqli_close($link);
+                    echo "</div>";
                 ?>
 
             </main>
