@@ -28,6 +28,22 @@ if (mysqli_query($link, $query)) {
     echo "Ошибка: " . $query . "<br>" . mysqli_error($link);
 }
 
+/* Посылаем запрос серверу */
+if ($result = mysqli_query($link, 'SELECT functionality.id as id_fun, functionality.Name, functionality.Description, Type, redactors.name as redactors_name FROM functionality left join redactors
+                                    on functionality.redactor_id = redactors.id ORDER BY functionality.id DESC')) {
+    /* Выборка результатов запроса */
+    while( $row = mysqli_fetch_assoc($result) ){
+        echo "<div class='message'>";
+        echo "<h2>" . $row['Name'] . "</h2>";
+        echo $row['Description'] . "<hr>";
+        echo $row['Type'] . "<br>";
+        echo  $row['redactors_name'];
+        echo "</div>";
+    }
+    /* Освобождаем используемую память */
+    mysqli_free_result($result);
+}
+
 /* Закрываем соединение */
 mysqli_close($link);
 ?>
