@@ -123,8 +123,6 @@
                                     mysqli_free_result($result);
                                 }
 
-                                /* Закрываем соединение */
-                                mysqli_close($link);
                             ?>
                         </td>
                         <td><input type="text" name="functionality" value="3D моделирование"> </td>
@@ -136,7 +134,27 @@
                 <br>
                 <input type="button" value="Послать запрос на сервер" onclick="Load()"/>
                 <br><br>
-                <div id='content'>здесь будет ответ сервера</div>
+
+                <?php
+                    /* Посылаем запрос серверу */
+                    if ($result = mysqli_query($link, 'SELECT functionality.id as id_fun, functionality.Name, functionality.Description, Type, redactors.name as redactors_name FROM functionality left join redactors
+                                                        on functionality.redactor_id = redactors.id ORDER BY functionality.id DESC')) {
+                        /* Выборка результатов запроса */
+                        while( $row = mysqli_fetch_assoc($result) ){
+                            echo "<div class='message'>";
+                            echo "<h2>" . $row['Name'] . "</h2>";
+                            echo $row['Description'] . "<hr>";
+                            echo $row['Type'] . "<br>";
+                            echo  $row['redactors_name'];
+                            echo "</div>";
+                        }
+                        /* Освобождаем используемую память */
+                        mysqli_free_result($result);
+                    }
+
+                    /* Закрываем соединение */
+                    mysqli_close($link);
+                ?>
 
             </main>
             <hr>
