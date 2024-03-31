@@ -3,6 +3,28 @@
     echo "<head>";
     echo "<title>Информация о графических редакторах</title>";
     echo "<link rel=\"stylesheet\" href=\"./styles/2lab.css\">";
+    echo "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>";
+    echo "<script>
+        $(document).ready(function() {
+            $('.delete-button').click(function() {
+                var id = $(this).data('id');
+                var row = $(this).closest('tr');
+                $.ajax({
+                    url: '6lab.php',
+                    type: 'DELETE',
+                    data: {
+                        'delete_id': id
+                    },
+                    success: function(response) {
+                        row.remove();
+                    },
+                    error: function() {
+                        alert('Ошибка при удалении');
+                    }
+                });
+            });
+        });
+    </script>";
     echo "</head>";
     echo "<body>";
     echo "<div class=\"cont\">";
@@ -37,17 +59,13 @@
         exit;
     }
 
-    // Если был передан параметр id для удаления
-    if (isset($_GET['delete_id'])) {
-        $id = $_GET['delete_id'];
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+        parse_str(file_get_contents("php://input"),$post_vars);
+        $id = $post_vars['delete_id'];
 
         // Удаление записи из базы
         $query = "DELETE FROM functionality WHERE ID = $id";
         mysqli_query($link, $query);
-
-        // Перенаправление обратно на страницу с таблицей
-        header('Location: 6lab.php');
-        exit;
     }
 
     /* Посылаем запрос серверу */
@@ -82,8 +100,11 @@
                     </tr>";
             /* Выборка результатов запроса */
             while( $row = mysqli_fetch_assoc($result) ){
-                printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><a href='6lab.php?delete_id=%s'>Удалить</a></td></tr>",
-                                $row['Name'], $row['Description'], $row['Type'], $row['redactors_name'], $row['id_fun']);
+                printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><button class='delete-button' data-id='%s'>Удалить</button></td></tr>",
+                    $row['Name'], $row['Description'], $row['Type'], $row['redactors_name'], $row['id_fun']);
+
+                //printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><a href='6lab.php?delete_id=%s'>Удалить</a></td></tr>",
+                //                $row['Name'], $row['Description'], $row['Type'], $row['redactors_name'], $row['id_fun']);
             }
             echo "</table>";
         /* Освобождаем используемую память */
