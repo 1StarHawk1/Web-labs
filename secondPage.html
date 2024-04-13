@@ -1,336 +1,337 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Компьютерная графика - применение, виды, будущее</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="description" content="Расширенная информация о компьютерной графике: области применения и виды">
-        <meta name="keywords" content="компьютерная графика, изображение, вектор, растр, пиксель, моделирование, CGI, CG">
-        <meta http-equiv="Content-Language" content="ru">
-        <link rel="stylesheet" href="./styles/2lab.css">
+<head>
+    <title>Компьютерная графика - применение, виды, будущее</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Расширенная информация о компьютерной графике: области применения и виды">
+    <meta name="keywords" content="компьютерная графика, изображение, вектор, растр, пиксель, моделирование, CGI, CG">
+    <meta http-equiv="Content-Language" content="ru">
+    <link rel="stylesheet" href="./styles/2lab.css">
 
-        <script>
-            function createRow(){
-                var text = document.getElementsByTagName("input");
-                var table = document.getElementsByTagName("table");
-                var newRow = document.createElement("tr");
-                newRow.classList.add("addedRow");
-                /*for(let i = 0; i<9; i++){
-                    var emptyCell = document.createElement("td");
-                    newRow.appendChild(emptyCell);
-                }*/
+    <script>
+        function createRow() {
+            var text = document.getElementsByTagName("input");
+            var table = document.getElementsByTagName("table");
+            var newRow = document.createElement("tr");
+            newRow.classList.add("addedRow");
+            /*for(let i = 0; i<9; i++){
                 var emptyCell = document.createElement("td");
-                if(text[0].value=="" || text[1].value==""){
-                    emptyCell.colSpan = 9;
-                    emptyCell.textContent = text[0].value + text[1].value;
-                    newRow.appendChild(emptyCell);
-                }
-                else{
-                    emptyCell.textContent = text[0].value;
-                    var anotherCell = document.createElement("td");
-                    anotherCell.textContent = text[1].value;
-                    anotherCell.colSpan = 8;
-                    newRow.appendChild(emptyCell);
-                    newRow.appendChild(anotherCell);
-                }
-                table[0].appendChild(newRow);
-                text[0].value="";
-                text[1].value = "";
+                newRow.appendChild(emptyCell);
+            }*/
+            var emptyCell = document.createElement("td");
+            if (text[0].value == "" || text[1].value == "") {
+                emptyCell.colSpan = 9;
+                emptyCell.textContent = text[0].value + text[1].value;
+                newRow.appendChild(emptyCell);
+            } else {
+                emptyCell.textContent = text[0].value;
+                var anotherCell = document.createElement("td");
+                anotherCell.textContent = text[1].value;
+                anotherCell.colSpan = 8;
+                newRow.appendChild(emptyCell);
+                newRow.appendChild(anotherCell);
             }
-            function deleteAddedRows(){
-                var addedRows = document.querySelectorAll(".addedRow");
-                for (var i = 0; i < addedRows.length; i++) {
-                    addedRows[i].remove();
-                }
-            }
+            table[0].appendChild(newRow);
+            text[0].value = "";
+            text[1].value = "";
+        }
 
-            var clicked = 0;
-            function changeTextBackgroung(){
-                var paragraphs = document.getElementsByTagName("p");
-                var buttons = document.getElementsByTagName("button");
-                if(clicked == 0){
-                    for(let i = 0; i<paragraphs.length; i++){
-                        paragraphs[i].style.backgroundColor = "transparent";
-                        clicked +=1
-                        buttons[0].textContent = "Вернуть выделение текста на странице";
+        function deleteAddedRows() {
+            var addedRows = document.querySelectorAll(".addedRow");
+            for (var i = 0; i < addedRows.length; i++) {
+                addedRows[i].remove();
+            }
+        }
+
+        var clicked = 0;
+
+        function changeTextBackgroung() {
+            var paragraphs = document.getElementsByTagName("p");
+            var buttons = document.getElementsByTagName("button");
+            if (clicked == 0) {
+                for (let i = 0; i < paragraphs.length; i++) {
+                    paragraphs[i].style.backgroundColor = "transparent";
+                    clicked += 1
+                    buttons[0].textContent = "Вернуть выделение текста на странице";
+                }
+            } else {
+                for (let i = 0; i < paragraphs.length; i++) {
+                    var prevElement = paragraphs[i].previousElementSibling;
+                    if (prevElement && prevElement.tagName.toLowerCase() === "h2") {
+                        paragraphs[i].style.backgroundColor = "rgba(159, 210, 255, 0.267)";
                     }
-                }
-                else{
-                    for(let i = 0; i<paragraphs.length; i++){
-                        var prevElement = paragraphs[i].previousElementSibling;
-                        if (prevElement && prevElement.tagName.toLowerCase() === "h2") {
-                            paragraphs[i].style.backgroundColor = "rgba(159, 210, 255, 0.267)";
-                        }
-                        clicked -=1
-                        buttons[0].textContent = "Снять выделение текста на странице";
-                    }
+                    clicked -= 1
+                    buttons[0].textContent = "Снять выделение текста на странице";
                 }
             }
+        }
 
-            var videoSize = 0;
-            function bigVideo(){
-                var video = document.getElementsByTagName("video");
-                var buttons = document.getElementsByTagName("button");
-                if(videoSize == 0){
-                    video[0].style.width = "100%"
-                    buttons[buttons.length-1].textContent = "Уменьшить плеер";
-                    videoSize++;
-                }
-                else{
-                    video[0].style.width = "600px"
-                    buttons[buttons.length-1].textContent = "Расширить плеер";
-                    videoSize--;
-                }
+        var videoSize = 0;
+
+        function bigVideo() {
+            var video = document.getElementsByTagName("video");
+            var buttons = document.getElementsByTagName("button");
+            if (videoSize == 0) {
+                video[0].style.width = "100%"
+                buttons[buttons.length - 1].textContent = "Уменьшить плеер";
+                videoSize++;
+            } else {
+                video[0].style.width = "600px"
+                buttons[buttons.length - 1].textContent = "Расширить плеер";
+                videoSize--;
             }
-        </script>
-    </head>
+        }
+    </script>
+</head>
 
-    <body>
-        <div class="cont">
-        <header>
-            <img src="./images/logo.png" alt="Логотип сайта" width="100" height="100">
-            <h1>Компьютерная графика</h1>
-        </header>
-        <hr>
-        <nav>
+<body>
+<div class="cont">
+    <header>
+        <img src="./images/logo.png" alt="Логотип сайта" width="100" height="100">
+        <h1>Компьютерная графика</h1>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href=index.html>Главная страница</a></li>
+            <li><a href=secondPage.html>Больше информации о компьютерной графике</a></li>
+            <li><a href="form.html">Форма посетителя сайта</a></li>
+            <li><a href=source.html>Использованные источники</a></li>
+            <li><a href="6lab.php">Информация о функциях Blender и Photoshop</a></li>
+            <li><a href="indexajax.php">Добавлление функций Blender и Photoshop</a></li>
+            <li><a href="clientxml.html">Информация о графических редакторах</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <main>
+        <section>
+            <button onclick="changeTextBackgroung()">Снять выделение текста на странице</button>
+            <h2>Области применения CG</h2>
+            <p>
+                Помимо видеоигр, в большинстве которых CG — это всё, что видит игрок, компьютерную графику
+                применяют специалисты во многих сферах. Вся окружающая нас графическая информация сделана
+                при помощи компьютера: книги, журналы, упаковки, обои, плакаты, инструкции, сайты и
+                приложения и т. д. Часто ручная графика гармонично интегрируется в компьютерную: иллюстратор
+                рисует изображение тушью, акварелью или любым другим инструментом, а затем оцифровывает его,
+                встраивает в макет и обрабатывает. Такая интеграция превращает ручной рисунок в компьютерную
+                графику. Вот некоторые из них:
+            </p>
             <ul>
-                <li><a href = index.html>Главная страница</a></li>
-                <li><a href = secondPage.html>Больше информации о компьютерной графике</a></li>
-                <li><a href = "form.html">Форма посетителя сайта</a></li>
-                <li><a href = source.html>Использованные источники</a></li>
-                <li><a href="6lab.php">Информация о функциях графических редакторов</a></li>
-                <li><a href="indexajax.php">Добавлление функций графических редакторов</a></li>
-                <li><a href="clientxml.html">Информация о графических редакторах</a></li>
+                <li>Дизайн
+                    <ul>
+                        <li>Баннеры</li>
+                        <li>Обои для экранов</li>
+                        <li>Лендинги</li>
+                        <li>Сайты</li>
+                    </ul>
+                </li>
+                <li>Анимация и игровая индустрия
+                    <ul>
+                        <li>Ролики</li>
+                        <li>Фантазийные миры и персонажи</li>
+                    </ul>
+                </li>
+                <li>Полиграфия и реклама
+                    <ul>
+                        <li>Буклеты</li>
+                        <li>3D проекции</li>
+                    </ul>
+                </li>
+                <li>Киноиндустрия
+                    <ul>
+                        <li>Спецэффекты</li>
+                    </ul>
+                </li>
+                <li>Промышленность
+                    <ul>
+                        <li>3D моделирование</li>
+                    </ul>
+                </li>
+                <li>Архитектура
+                    <ul>
+                        <li>Визуализация проектов</li>
+                        <li>Создание рендеров</li>
+                    </ul>
+                </li>
+                <li>Живопись
+                    <ul>
+                        <li>Цифровые картины</li>
+                    </ul>
+                </li>
+                <li>Медицина
+                    <ul>
+                        <li>Обучающие симуляторы</li>
+                    </ul>
+                </li>
+                <li>Образование и культура
+                    <ul>
+                        <li>Симуляторы</li>
+                        <li>Проекты дополненной реальности</li>
+                    </ul>
+                </li>
             </ul>
-        </nav>
+        </section>
+        <section>
+            <h2>Виды компьютерной графики</h2>
+            <p>
+                Существует четыре вида компьютерной графики в дизайне, разберём каждый из них:
+            </p>
+            <h3>Растровая графика</h3>
+            <p>
+                Растровая компьютерная графика, или «растр» состоит из множества квадратов — пикселей.
+                Такое изображение невозможно увеличить без потери качества: оно начинает видоизменяться,
+                проявляются неровные края и отдельные пиксели. Растровая графика создаётся в цветовом
+                пространстве RGB и часто имеет красивый градиент, сложные переходы, интересную заливку,
+                много цвета и почти фотографический реализм. Растровую графику используют, когда нужно
+                нарисовать, например, большую и красочную иллюстрацию для сайта: момент коммуникации с
+                целевой аудиторией играет здесь важную роль.
+            </p>
+            <h3>Векторная графика</h3>
+            <p>
+                Векторная компьютерная графика состоит из опорных точек и соединяющих их кривых:
+                такие изображения можно масштабировать без потери качества. Векторные изображения
+                используют для создания инфографики, иконок и других элементов интерфейса, логотипов,
+                персонажей фирменного стиля, лендингов, сайтов и приложений. Вектор, по сравнению с растром,
+                более информативен. Поскольку качество векторных изображений не зависит от разрешения, их
+                используют на больших форматах: билбордах, автобусах, баннерах, растяжках и т. д.
+            </p>
+            <img src="./images/vectorAndRastr.png" alt="Векторная и растровая графика" width="300">
+            <h3>Фрактальная графика</h3>
+            <p>
+                Фрактальная графика связывает искусство и математику, это результат работы математических
+                алгоритмов. Простейший пример фрактальной графики — калейдоскоп: механизм проектирует некий
+                рисунок, выстраивая его без участия человека. Фрактал — это бесконечно воспроизводимая
+                самоподобная структура. В отличие от паттерна — бесконечно повторяемого рисунка, полностью
+                предсказать внешний вид фрактала при его создании невозможно. Пример фрактальной графики —
+                заставка на экране компьютера в спящем режиме, где похожие друг на друга геометрические объекты
+                бесконечно сменяют друг друга.
+            </p>
+            <img src="./images/fractal.jpeg" alt="Снимок экрана блендера" width="300">
+            <h3>Трехмерная графика</h3>
+            <p>
+                3D-графика передаёт ощущение объёма. Когда дизайнер рисует картинку в
+                2D, он использует две оси: высоту и ширину. В трёхмерной графике к ним добавляется третья
+                ось — глубина. Каждая точка имеет свои координаты на каждой из трёх осей. Трёхмерная графика
+                применяется в различных индустриях: от архитектуры до медицинской промышленности. В дизайне
+                3D-графика активно используется в сферах геймдева, брендинга, айдентики, дизайна сайтов и
+                мобильных приложений: например, при создании иллюстраций, иконок и логотипов.
+            </p>
+            <img src="./images/blender.PNG" alt="Снимок экрана блендера" width="300">
+
+            <table onclick="createRow()">
+                <caption>Виды компьютерной графики и редакторы для них</caption>
+                <thead>
+                <td></td>
+                <th colspan="8">Инструмент/редактор</th>
+
+                <tr>
+                    <th>Вид графики</th>
+                    <td>Adobe Photoshop</td>
+                    <td>Adobe Illustrator</td>
+                    <td>Figma</td>
+                    <td>CorelDRAW</td>
+                    <td>Fractal Generator</td>
+                    <td>Frax</td>
+                    <td>Blender</td>
+                    <td>3dsMax</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Растровая</td>
+                    <td><img src="images/yes.png" alt="X"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Векторная</td>
+                    <td></td>
+                    <td colspan="3">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Фрактальная</td>
+                    <td></td>
+                    <td colspan="2">X</td>
+                    <td></td>
+                    <td colspan="2">X</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Трехмерная</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">X</td>
+                </tr>
+                </tbody>
+                <tfooter>
+                    <td colspan="9">В таблице приведены далеко не все существующие редакторы</td>
+                </tfooter>
+            </table>
+
+            <input>
+            <input>
+            <button onclick="createRow()">Создать строку таблицы</button>
+            <button onclick="deleteAddedRows()">Удалить добавленные строки</button>
+
+        </section>
+        <section>
+            <h2>Что ждет CG в будущем</h2>
+            <p>
+                Одна из проблем графики, которая может быть решена уже в ближайшей перспективе, — это
+                эффект зловещей долины. Термин придумал японский робототехник и инженер Масахиро Мори.
+                Это феномен, обозначающий иррациональный страх и отвращение, которые возникают, когда кто-то
+                видит робота или объект, очень похожий на человека.
+            </p>
+            <p>
+                Когда говорим о компьютерной графике, можно ожидать, что в
+                будущем она будет продолжать свое развитие и совершенствоваться. С
+                появлением новых технологий, таких как улучшенные методы отображения, более мощное
+                оборудование и программное обеспечение, компьютерная графика станет еще более реалистичной
+                и потрясающей. Возможно, мы увидим улучшенные способы взаимодействия с компьютерной графикой,
+                такие как виртуальная реальность или дополненная реальность, что позволит пользователям еще
+                глубже погрузиться в виртуальные миры и создавать более впечатляющие визуальные эффекты. Таким
+                образом, будущее компьютерной графики представляется ярким и волнующим, с бесконечными
+                возможностями для творчества и инноваций.
+            </p>
+        </section>
         <hr>
-        <main>
-            <section>
-                <button onclick="changeTextBackgroung()">Снять выделение текста на странице</button>
-                <h2>Области применения CG</h2>
-                <p>
-                    Помимо видеоигр, в большинстве которых CG — это всё, что видит игрок, компьютерную графику 
-                    применяют специалисты во многих сферах. Вся окружающая нас графическая информация сделана 
-                    при помощи компьютера: книги, журналы, упаковки, обои, плакаты, инструкции, сайты и 
-                    приложения и т. д. Часто ручная графика гармонично интегрируется в компьютерную: иллюстратор 
-                    рисует изображение тушью, акварелью или любым другим инструментом, а затем оцифровывает его, 
-                    встраивает в макет и обрабатывает. Такая интеграция превращает ручной рисунок в компьютерную 
-                    графику. Вот некоторые из них:
-                </p>
-                <ul>
-                    <li>Дизайн
-                        <ul>
-                            <li>Баннеры</li>
-                            <li>Обои для экранов</li>
-                            <li>Лендинги</li>
-                            <li>Сайты</li>
-                        </ul>
-                    </li>
-                    <li>Анимация и игровая индустрия
-                        <ul>
-                            <li>Ролики</li>
-                            <li>Фантазийные миры и персонажи</li>
-                        </ul>
-                    </li>
-                    <li>Полиграфия и реклама
-                        <ul>
-                            <li>Буклеты</li>
-                            <li>3D проекции</li>
-                        </ul>
-                    </li>
-                    <li>Киноиндустрия
-                        <ul>
-                            <li>Спецэффекты</li>
-                        </ul>
-                    </li>
-                    <li>Промышленность
-                        <ul>
-                            <li>3D моделирование</li>
-                        </ul>
-                    </li>
-                    <li>Архитектура
-                        <ul>
-                            <li>Визуализация проектов</li>
-                            <li>Создание рендеров</li>
-                        </ul>
-                    </li>
-                    <li>Живопись
-                        <ul>
-                            <li>Цифровые картины</li>
-                        </ul>
-                    </li>
-                    <li>Медицина
-                        <ul>
-                            <li>Обучающие симуляторы</li>
-                        </ul>
-                    </li>
-                    <li>Образование и культура
-                        <ul>
-                            <li>Симуляторы</li>
-                            <li>Проекты дополненной реальности</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2>Виды компьютерной графики</h2>
-                <p>
-                    Существует четыре вида компьютерной графики в дизайне, разберём каждый из них:
-                </p>
-                <h3>Растровая графика</h3>
-                <p>
-                    Растровая компьютерная графика, или «растр» состоит из множества квадратов — пикселей. 
-                    Такое изображение невозможно увеличить без потери качества: оно начинает видоизменяться, 
-                    проявляются неровные края и отдельные пиксели. Растровая графика создаётся в цветовом 
-                    пространстве RGB и часто имеет красивый градиент, сложные переходы, интересную заливку, 
-                    много цвета и почти фотографический реализм. Растровую графику используют, когда нужно 
-                    нарисовать, например, большую и красочную иллюстрацию для сайта: момент коммуникации с 
-                    целевой аудиторией играет здесь важную роль.
-                </p>
-                <h3>Векторная графика</h3>
-                <p>
-                    Векторная компьютерная графика состоит из опорных точек и соединяющих их кривых: 
-                    такие изображения можно масштабировать без потери качества. Векторные изображения 
-                    используют для создания инфографики, иконок и других элементов интерфейса, логотипов, 
-                    персонажей фирменного стиля, лендингов, сайтов и приложений. Вектор, по сравнению с растром, 
-                    более информативен. Поскольку качество векторных изображений не зависит от разрешения, их 
-                    используют на больших форматах: билбордах, автобусах, баннерах, растяжках и т. д.
-                </p>
-                <img src="./images/vectorAndRastr.png" alt="Векторная и растровая графика" width="300">
-                <h3>Фрактальная графика</h3>
-                <p>
-                    Фрактальная графика связывает искусство и математику, это результат работы математических 
-                    алгоритмов. Простейший пример фрактальной графики — калейдоскоп: механизм проектирует некий 
-                    рисунок, выстраивая его без участия человека. Фрактал — это бесконечно воспроизводимая 
-                    самоподобная структура. В отличие от паттерна  — бесконечно повторяемого рисунка, полностью 
-                    предсказать внешний вид фрактала при его создании невозможно. Пример фрактальной графики — 
-                    заставка на экране компьютера в спящем режиме, где похожие друг на друга геометрические объекты 
-                    бесконечно сменяют друг друга. 
-                </p>
-                <img src="./images/fractal.jpeg" alt="Снимок экрана блендера" width="300">
-                <h3>Трехмерная графика</h3>
-                <p>
-                    3D-графика передаёт ощущение объёма. Когда дизайнер рисует картинку в 
-                    2D, он использует две оси: высоту и ширину. В трёхмерной графике к ним добавляется третья 
-                    ось — глубина. Каждая точка имеет свои координаты на каждой из трёх осей. Трёхмерная графика 
-                    применяется в различных индустриях: от архитектуры до медицинской промышленности. В дизайне 
-                    3D-графика активно используется в сферах геймдева, брендинга, айдентики, дизайна сайтов и 
-                    мобильных приложений: например, при создании иллюстраций, иконок и логотипов.
-                </p>
-                <img src="./images/blender.PNG" alt="Снимок экрана блендера" width="300">
-
-                    <table onclick="createRow()">
-                        <caption>Виды компьютерной графики и редакторы для них</caption>
-                        <thead>
-                            <td></td>
-                            <th colspan="8">Инструмент/редактор</th>
-                        
-                            <tr>
-                                <th>Вид графики</th>
-                                <td>Adobe Photoshop</td>
-                                <td>Adobe Illustrator</td>
-                                <td>Figma</td>
-                                <td>CorelDRAW</td>
-                                <td>Fractal Generator</td>
-                                <td>Frax</td>
-                                <td>Blender</td>
-                                <td>3dsMax</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Растровая</td>
-                                <td><img src="images/yes.png" alt="X"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Векторная</td>
-                                <td></td>
-                                <td colspan="3">X</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Фрактальная</td>
-                                <td></td>
-                                <td colspan="2">X</td>
-                                <td></td>
-                                <td colspan="2">X</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Трехмерная</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td colspan="2">X</td>
-                            </tr>
-                        </tbody>
-                        <tfooter>
-                            <td colspan="9">В таблице приведены далеко не все существующие редакторы</td>
-                        </tfooter>
-                    </table>
-
-                <input>
-                <input>
-                <button  onclick="createRow()">Создать строку таблицы</button>
-                <button onclick="deleteAddedRows()">Удалить добавленные строки</button>
-
-            </section>
-            <section>
-                <h2>Что ждет CG в будущем</h2>
-                <p>
-                    Одна из проблем графики, которая может быть решена уже в ближайшей перспективе, — это 
-                    эффект зловещей долины. Термин придумал японский робототехник и инженер Масахиро Мори. 
-                    Это феномен, обозначающий иррациональный страх и отвращение, которые возникают, когда кто-то 
-                    видит робота или объект, очень похожий на человека.
-                </p>
-                <p>
-                    Когда говорим о компьютерной графике, можно ожидать, что в 
-                    будущем она будет продолжать свое развитие и совершенствоваться. С 
-                    появлением новых технологий, таких как улучшенные методы отображения, более мощное 
-                    оборудование и программное обеспечение, компьютерная графика станет еще более реалистичной 
-                    и потрясающей. Возможно, мы увидим улучшенные способы взаимодействия с компьютерной графикой, 
-                    такие как виртуальная реальность или дополненная реальность, что позволит пользователям еще 
-                    глубже погрузиться в виртуальные миры и создавать более впечатляющие визуальные эффекты. Таким 
-                    образом, будущее компьютерной графики представляется ярким и волнующим, с бесконечными 
-                    возможностями для творчества и инноваций.
-                </p>
-            </section>
-            <hr>
-            <section>
-                <h3>Видео на тему  "Компьютерная графика в кино"</h3>
-                <video controls width="600">
-                    <source src="video/Компьютерная графика в кино.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео элемент.
-                </video><br>
-                <button onclick="bigVideo()">Расширить плеер</button>
-                <p>Для удобство приведена аудио версия:
-                    <audio controls>
-                        <source src="video/Компьютерная графика в кино.mp4" type="audio/mp4">
-                        Ваш браузер не поддерживает аудио элемент.
-                      </audio>
-                </p>
-            </section>
-        </main>
-        <hr>
-        <footer>
-            <p>Компьютерная графика 2024</p>
-            <address>
-                По вопросам писать: <a href="mailto:pr@guap.ru">pr@guap.ru</a><br>
-            </address>
-        </footer>
-    </div>
-    </body>
+        <section>
+            <h3>Видео на тему "Компьютерная графика в кино"</h3>
+            <video controls width="600">
+                <source src="video/Компьютерная графика в кино.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео элемент.
+            </video>
+            <br>
+            <button onclick="bigVideo()">Расширить плеер</button>
+            <p>Для удобство приведена аудио версия:
+                <audio controls>
+                    <source src="video/Компьютерная графика в кино.mp4" type="audio/mp4">
+                    Ваш браузер не поддерживает аудио элемент.
+                </audio>
+            </p>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <p>Компьютерная графика 2024</p>
+        <address>
+            По вопросам писать: <a href="mailto:pr@guap.ru">pr@guap.ru</a><br>
+        </address>
+    </footer>
+</div>
+</body>
 </html>

@@ -11,15 +11,38 @@
                 <th style="text-align:left">Поддерживаемые ОС</th>
                 <th style="text-align:left">Иконка</th>
             </tr>
-            <xsl:for-each select="catalog/cd">
-                <tr>
-                    <td><xsl:value-of select="name" /></td>
-                    <td><xsl:value-of select="description" /></td>
-                    <td><xsl:value-of select="license" /></td>
-                    <td><xsl:value-of select="os" /></td>
-                    <td><img src="{icon}" alt="{name}"/></td>
-                </tr>
-            </xsl:for-each>
+            <xsl:apply-templates select="catalog/cd">
+                <xsl:sort select="name"/>
+            </xsl:apply-templates>
         </table>
+    </xsl:template>
+
+    <xsl:template match="cd">
+        <tr>
+            <td>
+                <xsl:value-of select="name"/>
+            </td>
+            <td>
+                <xsl:value-of select="description"/>
+            </td>
+            <td>
+                <xsl:if test="license='Бесплатная'">
+                    <span style="color:green">
+                        <xsl:value-of select="license"/>
+                    </span>
+                </xsl:if>
+                <xsl:if test="license='Платная'">
+                    <span style="color:red">
+                        <xsl:value-of select="license"/>
+                    </span>
+                </xsl:if>
+            </td>
+            <td>
+                <xsl:value-of select="os"/>
+            </td>
+            <td>
+                <img src="{icon}" alt="{name}"/>
+            </td>
+        </tr>
     </xsl:template>
 </xsl:stylesheet>

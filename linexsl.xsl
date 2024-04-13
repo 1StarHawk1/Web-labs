@@ -4,12 +4,17 @@
         <h2>Графические редакторы</h2>
         <xsl:for-each select="catalog/cd">
             <div style="background-color: teal; color: white; padding: 4px">
-                <span style="font-weight: bold"><xsl:value-of select="name"/> - </span>
+                <span style="font-weight: bold">
+                    <xsl:value-of select="name"/>
+                    -
+                </span>
                 <xsl:value-of select="license"/>
             </div>
             <div style="margin-left: 20px; margin-bottom: 1em; font-size: 10pt">
-                <p> <xsl:value-of select="description"/>
-                    <span style="font-style: italic"> (<xsl:value-of select="os"/>)</span>
+                <p>
+                    <xsl:value-of select="description"/>
+                    <span style="font-style: italic">(<xsl:value-of select="os"/>)
+                    </span>
                 </p>
                 <img src="{icon}" alt="{name}" style="width: 50px; height: 50px;"/>
             </div>

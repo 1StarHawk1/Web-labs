@@ -1,72 +1,73 @@
-<?xml version="1.0" encoding="windows-1251"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <catalog>
     <cd>
         <name>Adobe Photoshop</name>
-        <description>Работа с растровыми изображениями, ретушь, цветокоррекция, монтаж</description>
-        <license>Платная</license>
+        <description>Р Р°Р±РѕС‚Р° СЃ СЂР°СЃС‚СЂРѕРІС‹РјРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё, СЂРµС‚СѓС€СЊ, С†РІРµС‚РѕРєРѕСЂСЂРµРєС†РёСЏ, РјРѕРЅС‚Р°Р¶</description>
+        <license>РџР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS</os>
         <icon>./images/redactors/photoshop.png</icon>
     </cd>
     <cd>
         <name>GIMP</name>
-        <description>Работа с растровыми изображениями, поддержка слоев, фильтры, инструменты рисования</description>
-        <license>Бесплатная</license>
+        <description>Р Р°Р±РѕС‚Р° СЃ СЂР°СЃС‚СЂРѕРІС‹РјРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё, РїРѕРґРґРµСЂР¶РєР° СЃР»РѕРµРІ, С„РёР»СЊС‚СЂС‹, РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ СЂРёСЃРѕРІР°РЅРёСЏ</description>
+        <license>Р‘РµСЃРїР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS, Linux</os>
         <icon>./images/redactors/gimp.png</icon>
     </cd>
     <cd>
         <name>CorelDRAW</name>
-        <description>Работа с векторными изображениями, макеты, иллюстрации, дизайн логотипов</description>
-        <license>Платная</license>
+        <description>Р Р°Р±РѕС‚Р° СЃ РІРµРєС‚РѕСЂРЅС‹РјРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё, РјР°РєРµС‚С‹, РёР»Р»СЋСЃС‚СЂР°С†РёРё, РґРёР·Р°Р№РЅ Р»РѕРіРѕС‚РёРїРѕРІ</description>
+        <license>РџР»Р°С‚РЅР°СЏ</license>
         <os>Windows</os>
         <icon>./images/redactors/coreldraw.png</icon>
     </cd>
     <cd>
         <name>Autodesk Maya</name>
-        <description>3D-моделирование, анимация, визуализация, спецэффекты</description>
-        <license>Платная</license>
+        <description>3D-РјРѕРґРµР»РёСЂРѕРІР°РЅРёРµ, Р°РЅРёРјР°С†РёСЏ, РІРёР·СѓР°Р»РёР·Р°С†РёСЏ, СЃРїРµС†СЌС„С„РµРєС‚С‹</description>
+        <license>РџР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS, Linux</os>
         <icon>./images/redactors/AutodeskMaya.jpg</icon>
     </cd>
     <cd>
         <name>Inkscape</name>
-        <description>Работа с векторными изображениями, создание и редактирование SVG, инструменты рисования</description>
-        <license>Бесплатная</license>
+        <description>Р Р°Р±РѕС‚Р° СЃ РІРµРєС‚РѕСЂРЅС‹РјРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё, СЃРѕР·РґР°РЅРёРµ Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ SVG, РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ СЂРёСЃРѕРІР°РЅРёСЏ
+        </description>
+        <license>Р‘РµСЃРїР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS, Linux</os>
         <icon>./images/redactors/inkscape.png</icon>
     </cd>
     <cd>
         <name>Affinity Designer</name>
-        <description>Векторный дизайн, создание иллюстраций, макеты интерфейсов</description>
-        <license>Платная</license>
+        <description>Р’РµРєС‚РѕСЂРЅС‹Р№ РґРёР·Р°Р№РЅ, СЃРѕР·РґР°РЅРёРµ РёР»Р»СЋСЃС‚СЂР°С†РёР№, РјР°РєРµС‚С‹ РёРЅС‚РµСЂС„РµР№СЃРѕРІ</description>
+        <license>РџР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS</os>
         <icon>./images/redactors/affinity-designer.png</icon>
     </cd>
     <cd>
         <name>Paint.NET</name>
-        <description>Работа с растровыми изображениями, поддержка слоев, фильтры</description>
-        <license>Бесплатная</license>
+        <description>Р Р°Р±РѕС‚Р° СЃ СЂР°СЃС‚СЂРѕРІС‹РјРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏРјРё, РїРѕРґРґРµСЂР¶РєР° СЃР»РѕРµРІ, С„РёР»СЊС‚СЂС‹</description>
+        <license>Р‘РµСЃРїР»Р°С‚РЅР°СЏ</license>
         <os>Windows</os>
         <icon>./images/redactors/paint-net-96.png</icon>
     </cd>
     <cd>
         <name>Blender</name>
-        <description>3D-моделирование, анимация, рендеринг, спецэффекты</description>
-        <license>Бесплатная</license>
+        <description>3D-РјРѕРґРµР»РёСЂРѕРІР°РЅРёРµ, Р°РЅРёРјР°С†РёСЏ, СЂРµРЅРґРµСЂРёРЅРі, СЃРїРµС†СЌС„С„РµРєС‚С‹</description>
+        <license>Р‘РµСЃРїР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS, Linux</os>
         <icon>./images/redactors/blender-3d.png</icon>
     </cd>
     <cd>
         <name>Krita</name>
-        <description>Цифровая живопись, редактирование растровых изображений, анимация</description>
-        <license>Бесплатная</license>
+        <description>Р¦РёС„СЂРѕРІР°СЏ Р¶РёРІРѕРїРёСЃСЊ, СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЂР°СЃС‚СЂРѕРІС‹С… РёР·РѕР±СЂР°Р¶РµРЅРёР№, Р°РЅРёРјР°С†РёСЏ</description>
+        <license>Р‘РµСЃРїР»Р°С‚РЅР°СЏ</license>
         <os>Windows, macOS, Linux</os>
         <icon>./images/redactors/krita-128.png</icon>
     </cd>
     <cd>
         <name>Sketch</name>
-        <description>Дизайн интерфейсов, векторная графика, прототипирование</description>
-        <license>Платная</license>
+        <description>Р”РёР·Р°Р№РЅ РёРЅС‚РµСЂС„РµР№СЃРѕРІ, РІРµРєС‚РѕСЂРЅР°СЏ РіСЂР°С„РёРєР°, РїСЂРѕС‚РѕС‚РёРїРёСЂРѕРІР°РЅРёРµ</description>
+        <license>РџР»Р°С‚РЅР°СЏ</license>
         <os>macOS</os>
         <icon>./images/redactors/sketch.png</icon>
     </cd>

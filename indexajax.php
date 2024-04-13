@@ -86,8 +86,8 @@
                     <li><a href = secondPage.html>Больше информации о компьютерной графике</a></li>
                     <li><a href = "form.html">Форма посетителя сайта</a></li>
                     <li><a href = source.html>Использованные источники</a></li>
-                    <li><a href="6lab.php">Информация о функциях графических редакторов</a></li>
-                    <li><a href="indexajax.php">Добавлление функций графических редакторов</a></li>
+                    <li><a href="6lab.php">Информация о функциях Blender и Photoshop</a></li>
+                    <li><a href="indexajax.php">Добавлление функций Blender и Photoshop</a></li>
                     <li><a href="clientxml.html">Информация о графических редакторах</a></li>
                 </ul>
             </nav>
