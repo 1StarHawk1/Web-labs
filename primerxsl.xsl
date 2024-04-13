@@ -17,7 +17,7 @@
                     <td><xsl:value-of select="description" /></td>
                     <td><xsl:value-of select="license" /></td>
                     <td><xsl:value-of select="os" /></td>
-                    <td><xsl:value-of select="image" /></td>
+                    <td><img src="{icon}" alt="{name}"/></td>
                 </tr>
             </xsl:for-each>
         </table>

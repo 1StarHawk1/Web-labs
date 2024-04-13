@@ -5,69 +5,69 @@
         <description>Работа с растровыми изображениями, ретушь, цветокоррекция, монтаж</description>
         <license>Платная</license>
         <os>Windows, macOS</os>
-        <icon></icon>
+        <icon>./images/redactors/photoshop.png</icon>
     </cd>
     <cd>
         <name>GIMP</name>
         <description>Работа с растровыми изображениями, поддержка слоев, фильтры, инструменты рисования</description>
         <license>Бесплатная</license>
         <os>Windows, macOS, Linux</os>
-        <icon></icon>
+        <icon>./images/redactors/gimp.png</icon>
     </cd>
     <cd>
         <name>CorelDRAW</name>
         <description>Работа с векторными изображениями, макеты, иллюстрации, дизайн логотипов</description>
         <license>Платная</license>
         <os>Windows</os>
-        <icon></icon>
+        <icon>./images/redactors/coreldraw.png</icon>
     </cd>
     <cd>
         <name>Autodesk Maya</name>
         <description>3D-моделирование, анимация, визуализация, спецэффекты</description>
         <license>Платная</license>
         <os>Windows, macOS, Linux</os>
-        <icon></icon>
+        <icon>./images/redactors/AutodeskMaya.jpg</icon>
     </cd>
     <cd>
         <name>Inkscape</name>
         <description>Работа с векторными изображениями, создание и редактирование SVG, инструменты рисования</description>
         <license>Бесплатная</license>
         <os>Windows, macOS, Linux</os>
-        <icon></icon>
+        <icon>./images/redactors/inkscape.png</icon>
     </cd>
     <cd>
         <name>Affinity Designer</name>
         <description>Векторный дизайн, создание иллюстраций, макеты интерфейсов</description>
         <license>Платная</license>
         <os>Windows, macOS</os>
-        <icon></icon>
+        <icon>./images/redactors/affinity-designer.png</icon>
     </cd>
     <cd>
         <name>Paint.NET</name>
         <description>Работа с растровыми изображениями, поддержка слоев, фильтры</description>
         <license>Бесплатная</license>
         <os>Windows</os>
-        <icon></icon>
+        <icon>./images/redactors/paint-net-96.png</icon>
     </cd>
     <cd>
         <name>Blender</name>
         <description>3D-моделирование, анимация, рендеринг, спецэффекты</description>
         <license>Бесплатная</license>
         <os>Windows, macOS, Linux</os>
-        <icon></icon>
+        <icon>./images/redactors/blender-3d.png</icon>
     </cd>
     <cd>
         <name>Krita</name>
         <description>Цифровая живопись, редактирование растровых изображений, анимация</description>
         <license>Бесплатная</license>
         <os>Windows, macOS, Linux</os>
-        <icon></icon>
+        <icon>./images/redactors/krita-128.png</icon>
     </cd>
     <cd>
         <name>Sketch</name>
         <description>Дизайн интерфейсов, векторная графика, прототипирование</description>
         <license>Платная</license>
         <os>macOS</os>
-        <icon></icon>
+        <icon>./images/redactors/sketch.png</icon>
     </cd>
 </catalog>
