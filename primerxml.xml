@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<catalog>
+    <cd>
+        <name>Adobe Photoshop</name>
+        <description>Работа с растровыми изображениями, ретушь, цветокоррекция, монтаж</description>
+        <license>Платная</license>
+        <os>Windows, macOS</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>GIMP</name>
+        <description>Работа с растровыми изображениями, поддержка слоев, фильтры, инструменты рисования</description>
+        <license>Бесплатная</license>
+        <os>Windows, macOS, Linux</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>CorelDRAW</name>
+        <description>Работа с векторными изображениями, макеты, иллюстрации, дизайн логотипов</description>
+        <license>Платная</license>
+        <os>Windows</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Autodesk Maya</name>
+        <description>3D-моделирование, анимация, визуализация, спецэффекты</description>
+        <license>Платная</license>
+        <os>Windows, macOS, Linux</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Inkscape</name>
+        <description>Работа с векторными изображениями, создание и редактирование SVG, инструменты рисования</description>
+        <license>Бесплатная</license>
+        <os>Windows, macOS, Linux</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Affinity Designer</name>
+        <description>Векторный дизайн, создание иллюстраций, макеты интерфейсов</description>
+        <license>Платная</license>
+        <os>Windows, macOS</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Paint.NET</name>
+        <description>Работа с растровыми изображениями, поддержка слоев, фильтры</description>
+        <license>Бесплатная</license>
+        <os>Windows</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Blender</name>
+        <description>3D-моделирование, анимация, рендеринг, спецэффекты</description>
+        <license>Бесплатная</license>
+        <os>Windows, macOS, Linux</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Krita</name>
+        <description>Цифровая живопись, редактирование растровых изображений, анимация</description>
+        <license>Бесплатная</license>
+        <os>Windows, macOS, Linux</os>
+        <icon></icon>
+    </cd>
+    <cd>
+        <name>Sketch</name>
+        <description>Дизайн интерфейсов, векторная графика, прототипирование</description>
+        <license>Платная</license>
+        <os>macOS</os>
+        <icon></icon>
+    </cd>
+</catalog>
