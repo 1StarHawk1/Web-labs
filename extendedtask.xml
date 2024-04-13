@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+    <Redactor>
+        <name>Adobe Photoshop</name>
+        <version>25.6</version>
+        <developer>Adobe</developer>
+        <description>Профессиональное графическое редактирование</description>
+        <Function>
+            <name>Рисование</name>
+            <description>Возможность создания изображений</description>
+            <type>Основная</type>
+        </Function>
+        <Function>
+            <name>Фоторетушь</name>
+            <description>Инструменты для редактирования фотографий</description>
+            <type>Основная</type>
+        </Function>
+        <Function>
+            <name>Эффекты</name>
+            <description>Добавление спецэффектов к изображениям</description>
+            <type>Дополнительная</type>
+        </Function>
+        <Function>
+            <name>Композитинг</name>
+            <description>Объединение различных изображений в одно</description>
+            <type>Дополнительная</type>
+        </Function>
+    </Redactor>
+
+    <Redactor>
+        <name>Blender</name>
+        <version>4.0.2</version>
+        <developer>	Blender Foundation</developer>
+        <Function>
+            <name>Моделирование</name>
+            <description>Создание 3D моделей и сцен</description>
+            <type>Основная</type>
+        </Function>
+        <Function>
+            <name>Анимация</name>
+            <description>Создание анимированных объектов и персонажей</description>
+            <type>Основная</type>
+        </Function>
+    </Redactor>
+</NewDataSet>
